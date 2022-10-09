@@ -1,0 +1,22 @@
+<h1>Sign Up</h1>
+<div class="stepsSignUp">
+	<SignUpStepEmailandPassword 
+	v-if="pageid == 1" 
+	:email="email" 
+	:password="password"
+	@setInputEmail="setInputEmail"
+	@setInputPassword="setInputPassword"
+	@gotostep="gotostep"
+	/>
+	<SignUpStepUserInfo 
+	v-if="pageid == 2" 
+	:name="name" 
+	:imageUser="imageUser" 
+	:phoneNumber="phoneNumber"
+	@setInputName="setInputName"
+	@setInputPhone="setInputPhone"
+	@setInputImage="setInputImage"
+	@gotostep="gotostep"
+	@register="register"
+	/>
+</div>

@@ -1,0 +1,79 @@
+input{
+	border: 1px solid rgb(173, 173, 173);
+    border-radius: 20px;
+	background: none;
+	padding: 10px;
+	padding-left: 20px;
+	width: 75%;
+	transition: .2s;
+}
+label{
+    width: 100%;
+    text-align: start;
+    padding-left: 100px;
+    margin: 25px auto 8px 10px;
+    font-size: 20px;
+}
+.title_page_updateblog{
+    text-align: start;
+    padding-left: 25px;
+    margin: 35px;
+}
+.paneltitleanddescription{
+    margin: 10px auto 10px auto;
+    background-color: rgba(127, 238, 255, 0.32);
+    max-width: 755px;
+    border-radius: 10px;
+    padding: 30px;
+}
+.panelvideo{
+    background-color: rgba(127, 238, 255, 0.205);
+    max-width: 755px;
+    margin: 20px auto 0px auto;
+    border-radius: 10px;
+}
+.videotitle{
+    text-align: start;
+    padding: 20px;
+}
+.header_video{
+    display: flex;
+    justify-content: space-between;
+}
+.deletebtn{
+    margin: 20px;
+    border: 1px solid rgb(173, 173, 173);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.deletebtn:hover{
+    background-color: rgb(246, 107, 107);
+    color: #ffff;
+    border: 1px solid #ffff;
+}
+.uploadbtn{
+    border: 1px solid #ffff;
+    border-radius: 20px;
+    min-width: 350px;
+    height: 45px;
+    margin: 20px;
+    color: #ffff;
+    background-color: rgba(0, 255, 60, 0.635);
+}
+.uploadbtn:hover{
+    background-color: rgba(14, 237, 66, 0.764);
+}
+.updatebtn{
+    border: 1px solid #ffff;
+    border-radius: 20px;
+    min-width: 350px;
+    height: 45px;
+    margin: 20px;
+    color: #ffff;
+    background-color: rgba(208, 185, 10, 0.901);
+}
+.updatebtn:hover{
+    background-color: rgb(179, 159, 6);
+}

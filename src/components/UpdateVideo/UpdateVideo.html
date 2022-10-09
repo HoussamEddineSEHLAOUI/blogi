@@ -1,0 +1,30 @@
+<form class="panelvideo" @submit.prevent="updateVideo">
+    <div class="paneldetailvideo">
+        <div class="header_video">
+            <h1 class="videotitle">Video : {{index}}</h1>
+            <button class="deletebtn" type="button" @click="$emit('deleteVideoOfBlog', index)">x</button>
+        </div>
+        <div class="form-group">
+            <label class="flag" for="flagvideo">Flag :</label>
+            <input type="text" id="flagvideo" placeholder="Name" v-model="flag" required="required"/>
+        </div>
+        <div class="form-group">
+            <label class="flag" for="durationvideo">Duration :</label>
+            <input type="text" id="durationvideo" v-model="duration" required="required" readonly/>
+        </div>
+        <div class="form-group">
+            <label class="start" for="startvideo">Start : <span style="color: rgb(250, 37, 37);">{{messageValidateStart}}</span></label>
+            <input type="text" id="startvideo" v-model="start" required="required"/>
+        </div>
+        <div class="form-group">
+            <label class="end" for="endvideo">End : <span style="color: rgb(250, 37, 37);">{{messageValidateEnd}}</span></label>
+            <input type="text" id="endvideo"  v-model="end" required="required"/>
+        </div>
+        <!-- <div class="form-group">
+            <label class="video" for="video">Video :</label>
+            <input type="file" accept="video/mp4,video/x-m4v,video/*" @change="previewVideo" required="required"> 
+        </div> -->
+    </div>
+    <button class="uploadbtn" type="submit">Update Video</button>
+</form>
+<span style="color: rgb(250, 37, 37);">{{messageValidetInterval}}</span>

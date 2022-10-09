@@ -1,0 +1,38 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" @submit.prevent="$emit('register', 1)">
+				<div class="profile-img-edit">
+					<img class="profile-pic profileImage" :src="image" alt="profile">
+					<div class="p-image">
+					  <label for="prfileimg" class="ciconuplodeimg">Image :</label>
+					  <input 
+					  id="prfileimg" 
+					  class="file-upload" 
+					  type="file" 
+					  accept="image/*" 
+					  @change="previewImage">
+					</div>
+				  </div>
+				<div class="login__field">
+					<label>Name :</label>
+					<input type="text" class="login__input" placeholder="Name" 
+                    :value="name"
+                    @input="event => $emit('setInputName', event.target.value)"
+                    >
+				</div>
+				<div class="login__field">
+					<label>Phone:</label>
+					<input type="text" class="login__input" placeholder="Phone" 
+                    :value="phoneNumber"
+                    @input="event => $emit('setInputPhone', event.target.value)"
+                    >
+				</div>
+				<button class="button login__submit" type="submit">
+					<span class="button__text">Sign up</span>
+				</button>
+                <button class="btnback" @click="$emit('gotostep', 1)">Previous</button>				
+			</form>
+		</div>	
+	</div>
+</div>

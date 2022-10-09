@@ -1,0 +1,31 @@
+<h1>Sign in</h1>
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" @submit.prevent="Login">
+				<div class="login__field">
+					<label for="email">Email</label>
+					<input 
+					id="email"
+					type="text" 
+					class="login__input" 
+					placeholder="Email" 
+					v-model="email">
+				</div>
+				<div class="login__field">
+					<label for="password">Password</label>
+					<input 
+					id="password"
+					type="password" 
+					class="login__input" 
+					placeholder="Password" 
+					v-model="password"
+					>
+				</div>
+				<button class="button login__submit" type="submit">
+					<span class="button__text">Log In Now</span>
+				</button>				
+			</form>
+		</div>		
+	</div>
+</div>

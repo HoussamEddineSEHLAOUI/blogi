@@ -1,0 +1,34 @@
+<h1 class="title_page_updateblog">Update blog</h1>
+<form @submit.prevent="onUpdateblog" class="formaddblog" >
+    <div class="paneltitleanddescription">
+        <div class="form-group">
+            <label class="titleblog" for="titleblog">Title :</label>
+            <input placeholder="Title" 
+            :value="blog?.title"
+            @input="event => blog.title = event.target.value"
+            id="titleblog" 
+            required="required"
+            />
+        </div>
+        <div class="form-group">
+            <label class="Descriptionblog" for="Descriptionblog">Description :</label>
+            <input placeholder="Description" 
+            :value="blog?.description"
+            @input="event => blog.description = event.target.value" 
+            id="Descriptionblog" 
+            required="required"
+            />
+        </div>
+    </div>
+    <!-- show all the viedios of the blog -->
+    <div class="panelvideo" v-for="(file, key) in blog?.files" :key="key">
+        <UpdateVideo 
+        :file="file"
+        :index="key"
+        @updateVideoOfBlog="updateVideoOfBlog"
+        @deleteVideoOfBlog="deleteVideoOfBlog"
+        />
+    </div>
+    <!-- submit button -->
+    <button type="submit" class="updatebtn" >Update blog</button>
+</form>

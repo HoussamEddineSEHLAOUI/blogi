@@ -1,0 +1,49 @@
+.blog{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    border: 1px solid rgb(143, 143, 143);
+    width: 755px;
+    border-radius: 10px;
+    padding: 10px 0px 0px 10px;
+    min-height: 155px;
+}
+.paneldetail{
+    padding-left: 10px;
+}
+.title{
+    overflow-wrap: break-word;
+}
+.description{
+    overflow-wrap: break-word;
+}
+.panelaction{
+    padding: 20px 20px 0px 0px;
+}
+.btn{
+    border: none;
+    color: #ffff;
+    border-radius: 20px;
+    width: 85px;
+    height: 35px;
+    margin: 4px;
+    cursor: pointer;
+}
+.btnshow{
+    background-color: rgb(32, 183, 110);
+}
+.btnupdate{
+    background-color: rgb(32, 155, 183);
+}
+.btndelete{
+    background-color: rgb(183, 75, 32);
+}
+.btnshow:hover{
+    background-color: rgb(16, 147, 84);
+}
+.btnupdate:hover{
+    background-color: rgb(25, 119, 140);
+}
+.btndelete:hover{
+    background-color: rgb(139, 57, 24);
+}

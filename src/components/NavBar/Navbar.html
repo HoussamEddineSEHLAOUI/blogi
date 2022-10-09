@@ -1,0 +1,19 @@
+<nav v-if="is_verified_email">
+    <div class="panellink">
+        <router-link class="link" to="/">Dashbord</router-link>
+        <router-link class="link" to="/add-blog">Add Blog</router-link>
+        <router-link class="link" to="/my-blogs">My Blogs</router-link>
+    </div>
+    <button @click="Logout" class="SignOutbtn">SignOut</button>
+</nav>
+<div v-if="!is_verified_email">
+    <nav>
+        <router-link class="link" to="/">Dashbord</router-link>
+        <button @click="Logout" class="SignOutbtn">SignOut</button>
+    </nav>
+    <div class="panelverifyemail">
+        <p class="messageverifyemail">
+            Please chek your email to verify your account !
+        </p>
+    </div>
+</div>

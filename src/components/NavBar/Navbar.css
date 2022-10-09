@@ -1,0 +1,31 @@
+nav{
+    background-color: black;
+    color: #ffff;
+    display: flex;
+    justify-content: space-between;
+}
+.link{
+    color: #ffff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+.link:hover{
+    color: #3295F8;
+}
+.SignOutbtn{
+    border: none;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: #3295F8;
+    color: #ffff;
+}
+.SignOutbtn:hover{
+    background-color: #3295f886;
+}
+.panelverifyemail{
+    background-color: #f8d432b6;
+    color: rgb(121, 120, 120);
+    height: 40px;
+    padding-top: 7px;
+}

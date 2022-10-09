@@ -1,0 +1,8 @@
+
+<input v-model="search" placeholder="Search" class="search"/>
+<div v-for="(blog, key) in filteredList()" :key="key">
+    <div class="blog">
+        <h1 class="title">{{blog.title}}</h1>
+        <h4 class="description">{{blog.description}}</h4>
+    </div>
+</div>
