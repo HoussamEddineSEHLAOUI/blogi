@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from "../store";
 // Layouts
 const Dashboard = () => import("@/layouts/DashboardView/Dashboard.vue");
 const AuthLayout = () => import("@/layouts/AuthLayout/AuthLayout.vue");
@@ -19,30 +20,45 @@ const childRoutes = (prop) => [
     name: prop + ".all",
     meta: { auth: true, name: "all blogs" },
     component: AllBlogs,
+    beforeEnter: () => {
+      if (!store.getters.isLoggedIn) return "/signin";
+    },
   },
   {
     path: "add-blog",
     name: prop + ".add",
     meta: { auth: true, name: "add blogs" },
     component: AddBlog,
+    beforeEnter: () => {
+      if (!store.getters.isLoggedIn) return "/signin";
+    },
   },
   {
     path: "my-blogs",
     name: prop + ".my",
     meta: { auth: true, name: "my blogs" },
     component: MyBlog,
+    beforeEnter: () => {
+      if (!store.getters.isLoggedIn) return "/signin";
+    },
   },
   {
     path: "show-blog",
     name: prop + ".show",
     meta: { auth: true, name: "show blog" },
     component: ShowBlog,
+    beforeEnter: () => {
+      if (!store.getters.isLoggedIn) return "/signin";
+    },
   },
   {
     path: "update-blogs",
     name: prop + ".update",
     meta: { auth: true, name: "update blog" },
     component: UpdateBlog,
+    beforeEnter: () => {
+      if (!store.getters.isLoggedIn) return "/signin";
+    },
   },
 ];
 const authChildRoutes = (prop) => [

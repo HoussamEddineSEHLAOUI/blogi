@@ -37,10 +37,13 @@ export default createStore({
     user(state) {
       return state.user;
     },
+    get_user_id(state) {
+      return state.user?.data?.uid;
+    },
     is_verified_email(state) {
       return state.user?.data?.emailVerified;
     },
-    is_logedin(state) {
+    isLoggedIn(state) {
       return state.user.loggedIn;
     },
   },
@@ -85,6 +88,7 @@ export default createStore({
       if (user) {
         // Upadre the user in state
         context.commit("SET_USER", user);
+        context.commit("SET_LOGGED_IN", true);
         // Send verification message to user
         await sendEmailVerification(user);
         // Get Url image profile :
@@ -104,6 +108,7 @@ export default createStore({
       const response = await signInWithEmailAndPassword(auth, email, password);
       if (response) {
         context.commit("SET_USER", response.user);
+        context.commit("SET_LOGGED_IN", true);
       } else {
         throw new Error("login failed");
       }
@@ -112,6 +117,7 @@ export default createStore({
     async logOut(context) {
       await signOut(auth);
       context.commit("SET_USER", null);
+      context.commit("SET_LOGGED_IN", false);
     },
 
     async fetchUser(context, user) {

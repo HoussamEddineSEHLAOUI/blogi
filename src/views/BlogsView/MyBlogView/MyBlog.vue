@@ -3,10 +3,14 @@
 <script>
 import Blog from "@/components/Blog/Blog.vue";
 import { useBlog } from "@/services/BlogService";
+import { mapGetters } from "vuex";
 export default {
   name: "MyBlobView",
   components: {
     Blog,
+  },
+  computed: {
+    ...mapGetters(["get_user_id"]),
   },
   methods: {
     filteredList() {

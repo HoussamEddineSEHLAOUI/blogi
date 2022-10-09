@@ -1,4 +1,5 @@
 import { database, uplodToStorageAndGetUrlPublic } from "@/Firebase";
+import store from "../store";
 import {
   collection,
   onSnapshot,
@@ -90,8 +91,9 @@ export function useBlog() {
     try {
       // Gel list of videos with public url
       const UpdateVideos = await getViedosListWithPublicurl(blog.files);
+      const uid = await store.getters.get_user_id;
       const data = {
-        uid: "d4dnCZGNQ0VaMwKxrZtuHROWGmH2",
+        uid: uid,
         title: blog.title,
         description: blog.description,
         files: UpdateVideos,
