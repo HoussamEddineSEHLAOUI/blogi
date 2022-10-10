@@ -27,7 +27,7 @@ export default {
   },
   async created() {
     const { getBlogByUserId } = useBlog();
-    this.Blogs = await getBlogByUserId("d4dnCZGNQ0VaMwKxrZtuHROWGmH2");
+    this.Blogs = await getBlogByUserId(getBlogByUserId);
   },
   mounted() {},
 };
