@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import { auth, uplodToStorageAndGetUrlPublic } from "@/Firebase";
+import createPersistedState from "vuex-persistedstate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -118,6 +119,7 @@ export default createStore({
       await signOut(auth);
       context.commit("SET_USER", null);
       context.commit("SET_LOGGED_IN", false);
+      sessionStorage.clear();
     },
 
     async fetchUser(context, user) {
@@ -133,4 +135,9 @@ export default createStore({
     },
   },
   modules: {},
+  plugins: [
+    createPersistedState({
+      storage: window.sessionStorage,
+    }),
+  ],
 });
