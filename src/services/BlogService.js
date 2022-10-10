@@ -64,7 +64,8 @@ export function useBlog() {
       const MyBlogs = refVue([]);
       const queryBlogByUserId = query(
         BlogCollection,
-        where("uid", "==", userId)
+        where("uid", "==", userId),
+        where("is_deleted", "==", false)
       );
       onSnapshot(queryBlogByUserId, (snapshot) => {
         MyBlogs.value = snapshot.docs.map((doc) => {
