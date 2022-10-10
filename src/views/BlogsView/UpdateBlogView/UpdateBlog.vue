@@ -17,7 +17,8 @@ export default {
     deleteVideoOfBlog(index) {
       this.blog?.files?.splice(index, 1);
     },
-    updateVideoOfBlog(index, file) {
+    updateVideoOfBlog(params) {
+      const { index, file } = params;
       this.blog.files[index] = file;
     },
     async convertSecondsToStringLocal(value) {

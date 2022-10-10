@@ -111,13 +111,14 @@ export function useBlog() {
   // Update blog function
   const updateBlog = async (id, blog) => {
     try {
-      // Get the doc ref
+      // Get files of the blog
+      const files = JSON.parse(JSON.stringify(blog.files));
       const docRef = await DOC(BlogCollection, id);
       // Get the new data of the blog
       const data = {
         title: blog.title,
         description: blog.description,
-        files: blog.files,
+        files: files,
         date_updated: Timestamp.now(),
       };
       // Update the date of the blog in firebase

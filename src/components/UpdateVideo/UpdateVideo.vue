@@ -63,8 +63,9 @@ export default {
           end: this.end,
           duration: this.file?.duration,
           video: this.video,
+          videoUrl: this.videoUrl,
         };
-        await alert("Videos updated successfully !");
+        await alert("Video updated successfully !");
         await this.$emit("updateVideoOfBlog", {
           index: this.index,
           file: file,
@@ -81,6 +82,7 @@ export default {
       end: 1,
       duration: 0,
       video: null,
+      videoUrl: "",
       messageValidateStart: "",
       messageValidateEnd: "",
       messageValidetInterval: "",
@@ -92,6 +94,7 @@ export default {
     this.end = this.file?.end;
     this.duration = convertSecondsToString(this.file?.duration);
     this.video = this.file?.video;
+    this.videoUrl = this.file?.videoUrl;
   },
   mounted() {},
 };
