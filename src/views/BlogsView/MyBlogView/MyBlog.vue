@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     filteredList() {
-      return this.Blogs.filter((blog) => {
+      return this.Blogs?.filter((blog) => {
         return blog.title.toLowerCase().includes(this.search.toLowerCase());
       });
     },
@@ -26,8 +26,8 @@ export default {
     };
   },
   async created() {
-    const { getBlogByUserId } = useBlog();
-    this.Blogs = await getBlogByUserId(getBlogByUserId);
+    const { getBlogByUserId } = await useBlog();
+    this.Blogs = await getBlogByUserId(this.get_user_id);
   },
   mounted() {},
 };

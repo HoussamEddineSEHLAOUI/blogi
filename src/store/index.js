@@ -116,10 +116,14 @@ export default createStore({
     },
 
     async logOut(context) {
-      await signOut(auth);
-      context.commit("SET_USER", null);
-      context.commit("SET_LOGGED_IN", false);
-      sessionStorage.clear();
+      try {
+        await signOut(auth);
+        context.commit("SET_USER", null);
+        context.commit("SET_LOGGED_IN", false);
+        sessionStorage.clear();
+      } catch (error) {
+        console.log("There was error on loggout", error);
+      }
     },
 
     async fetchUser(context, user) {
