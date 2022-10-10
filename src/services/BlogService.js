@@ -23,8 +23,8 @@ async function getViedosListWithPublicurl(files) {
     await UpdateVideos.push({
       videoUrl: publicVideoUrl,
       duration: file?.duration,
-      start: file?.end,
-      end: file?.start,
+      start: file?.start,
+      end: file?.end,
       flag: file?.flag,
     });
   }
