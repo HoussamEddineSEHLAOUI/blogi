@@ -90,8 +90,6 @@ export default createStore({
         // Upadre the user in state
         context.commit("SET_USER", user);
         context.commit("SET_LOGGED_IN", true);
-        // Send verification message to user
-        await sendEmailVerification(user);
         // Get Url image profile :
         const urlImageUser = await uplodToStorageAndGetUrlPublic(imageUser);
         // Update user profile
@@ -100,6 +98,8 @@ export default createStore({
           photoURL: urlImageUser,
           phoneNumber: phoneNumber,
         });
+        // Send verification message to user
+        await sendEmailVerification(user);
       } else {
         throw new Error("Unable to register user");
       }
